@@ -1,0 +1,42 @@
+../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c: In function 'OAL_SemPost':
+../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c:58:6: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+  int ret;
+      ^
+../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c: In function 'OAL_calloc':
+../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c:81:2: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  memset(ret, 0x00, size);
+  ^
+../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c: In function 'OAL_OutputPCM':
+../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c:363:3: warning: passing argument 2 of 'hal_i2s_get_tx_sample_count_ex' from incompatible pointer type [enabled by default]
+   hal_i2s_get_tx_sample_count_ex(p->i2s_port, &i2s_amount_space_tones);
+   ^
+In file included from ../../../../../driver/chip/inc/hal.h:228:0,
+                 from ../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c:4:
+../../../../../driver/chip/inc/hal_i2s.h:1224:19: note: expected 'uint32_t *' but argument is of type 'unsigned int *'
+  hal_i2s_status_t hal_i2s_get_tx_sample_count_ex(hal_i2s_port_t i2s_port, uint32_t *sample_count);
+                   ^
+../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c: In function 'inputPCM':
+../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c:380:3: warning: passing argument 2 of 'hal_i2s_rx_read_ex' from incompatible pointer type [enabled by default]
+   hal_i2s_rx_read_ex(p->i2s_port, data);
+   ^
+In file included from ../../../../../driver/chip/inc/hal.h:228:0,
+                 from ../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c:4:
+../../../../../driver/chip/inc/hal_i2s.h:1213:18: note: expected 'uint32_t *' but argument is of type 'unsigned int *'
+ hal_i2s_status_t hal_i2s_rx_read_ex(hal_i2s_port_t i2s_port, uint32_t *data);
+                  ^
+../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c: In function 'OAL_InputPCM':
+../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c:402:3: warning: passing argument 2 of 'hal_i2s_get_rx_sample_count_ex' from incompatible pointer type [enabled by default]
+   hal_i2s_get_rx_sample_count_ex(p->i2s_port, &i2s_amount_incoming_tones);
+   ^
+In file included from ../../../../../driver/chip/inc/hal.h:228:0,
+                 from ../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c:4:
+../../../../../driver/chip/inc/hal_i2s.h:1235:18: note: expected 'uint32_t *' but argument is of type 'unsigned int *'
+ hal_i2s_status_t hal_i2s_get_rx_sample_count_ex(hal_i2s_port_t i2s_port, uint32_t *sample_count);
+                  ^
+../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c: In function 'OAL_InitAudio':
+../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c:441:5: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' [-Wformat=]
+     printf("60477 before OAL_InitAudiogpio mode= %d,\n", GPIO_ReadReg(0xA20B0044));
+     ^
+../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c:445:5: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' [-Wformat=]
+     printf("60477 after OAL_InitAudiogpio mode= %d,\n", GPIO_ReadReg(0xA20B0044));
+     ^

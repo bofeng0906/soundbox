@@ -1,0 +1,41 @@
+../../../../../middleware/MTK/wifi_service/combo/module.mk:21: WIFI_LIB_FOLDER=wifi_inic
+../../../../../middleware/MTK/wifi_service/combo/module.mk:21: WIFI_LIB_FOLDER=wifi_inic
+../../../../../project/mt7686_hdk/apps/audio_ref_design/src/mp3_codec_sqc.c: In function 'mp3_codec_demo_play_pause_resume_10times':
+../../../../../project/mt7686_hdk/apps/audio_ref_design/src/mp3_codec_sqc.c:197:13: warning: format '%d' expects argument of type 'int', but argument 3 has type 'int32_t' [-Wformat=]
+             sprintf(full_file_path_name, "SD:/temp/%d.mp3", i);
+             ^
+../../../../../project/mt7686_hdk/apps/audio_ref_design/src/mp3_codec_sqc.c:170:10: warning: unused variable 'buf' [-Wunused-variable]
+     char buf[1024] = {0};
+          ^
+../../../../../project/mt7686_hdk/apps/audio_ref_design/src/mp3_codec_sqc.c:169:10: warning: unused variable 'length_write' [-Wunused-variable]
+     UINT length_write;
+          ^
+../../../../../project/mt7686_hdk/apps/audio_ref_design/src/mp3_codec_sqc.c:168:13: warning: unused variable 'ret' [-Wunused-variable]
+     FRESULT ret;
+             ^
+../../../../../project/mt7686_hdk/apps/audio_ref_design/src/mp3_codec_sqc.c:167:11: warning: unused variable 'file_size' [-Wunused-variable]
+  uint32_t file_size;
+           ^
+../../../../../middleware/MTK/audio/mp3_codec/src/mp3_codec_7682.c: In function 'mp3_codec_play_internal':
+../../../../../middleware/MTK/audio/mp3_codec/src/mp3_codec_7682.c:1429:5: warning: implicit declaration of function 'aucodec_softreset' [-Wimplicit-function-declaration]
+     aucodec_softreset();//soft reset
+     ^
+../../../../../middleware/MTK/audio/mp3_codec/src/mp3_codec_7682.c:1431:5: warning: implicit declaration of function 'aucodec_init' [-Wimplicit-function-declaration]
+     aucodec_init();
+     ^
+../../../../../middleware/MTK/audio/mp3_codec/src/mp3_codec_7682.c:1432:5: warning: implicit declaration of function 'aucodec_set_dai_fmt' [-Wimplicit-function-declaration]
+     aucodec_set_dai_fmt(eI2S, e16Bit, eBCLK_NO_INV);//set DAI format
+     ^
+../../../../../middleware/MTK/audio/mp3_codec/src/mp3_codec_7682.c:1444:13: warning: implicit declaration of function 'aucodec_set_dai_sysclk' [-Wimplicit-function-declaration]
+             aucodec_set_dai_sysclk(mp3_sampling_rate, eSLAVE, bclk, eMCLK8KBASE, ePLLEnable);
+             ^
+../../../../../middleware/MTK/audio/mp3_codec/src/mp3_codec_7682.c:1421:25: warning: variable 'frequency' set but not used [-Wunused-but-set-variable]
+     hal_i2c_frequency_t frequency;
+                         ^
+../../../../../middleware/MTK/audio/mp3_codec/src/mp3_codec_7682.c:1420:20: warning: variable 'i2c_port' set but not used [-Wunused-but-set-variable]
+     hal_i2c_port_t i2c_port;
+                    ^
+../../../../../middleware/MTK/audio/mp3_codec/src/mp3_codec_7682.c: In function 'mp3_codec_stop':
+../../../../../middleware/MTK/audio/mp3_codec/src/mp3_codec_7682.c:1572:5: warning: implicit declaration of function 'aucodec_i2c_deinit' [-Wimplicit-function-declaration]
+     aucodec_i2c_deinit();
+     ^

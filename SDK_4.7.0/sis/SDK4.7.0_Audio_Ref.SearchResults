@@ -1,0 +1,18 @@
+---- test_sd_event_callback Matches (17 in 8 files) ----
+Aac_play_demo.c (v:\mtk_sdk\sdk_4.7.0\project\mt7686_hdk\apps\audio_ref_design\src):static void test_sd_event_callback(aac_decoder_api_media_handle_t *hdl, aac_decoder_api_media_event_t event)
+Aac_play_demo.c (v:\mtk_sdk\sdk_4.7.0\project\mt7686_hdk\apps\audio_ref_design\src):    hdl = aac_deocder_api_open(test_sd_event_callback);
+Amr_decoder_demo.c (v:\mtk_sdk\sdk_4.7.0\project\mt7686_hdk\apps\audio_ref_design\src):static void test_sd_event_callback(amr_decoder_handle_t *hdl, amr_decoder_media_event_t event)
+Amr_decoder_demo.c (v:\mtk_sdk\sdk_4.7.0\project\mt7686_hdk\apps\audio_ref_design\src):    hdl = amr_decoder_open(test_sd_event_callback);
+Amr_encoder_demo.c (v:\mtk_sdk\sdk_4.7.0\project\mt7686_hdk\apps\audio_ref_design\src):static void test_sd_event_callback(amr_encoder_handle_t *hdl, amr_encoder_media_event_t event)
+Amr_encoder_demo.c (v:\mtk_sdk\sdk_4.7.0\project\mt7686_hdk\apps\audio_ref_design\src):    hdl = amr_encoder_open(test_sd_event_callback, encoder_config);
+Audio_codec.h (v:\mtk_sdk\sdk_4.7.0\middleware\mtk\audio\inc): *       static void test_sd_event_callback(audio_codec_media_handle_t *hdl, audio_codec_event_t event)
+Audio_codec.h (v:\mtk_sdk\sdk_4.7.0\middleware\mtk\audio\inc): *             hdl = audio_codec_wav_codec_open(test_sd_event_callback, NULL);
+Mp3_codec.h (v:\mtk_sdk\sdk_4.7.0\middleware\mtk\audio\mp3_codec\inc): *       static void test_sd_event_callback(mp3_codec_media_handle_t *hdl, mp3_codec_event_t event)
+Mp3_codec.h (v:\mtk_sdk\sdk_4.7.0\middleware\mtk\audio\mp3_codec\inc): *             hdl = mp3_codec_open(test_sd_event_callback);
+Mp3_codec_demo.c (v:\mtk_sdk\sdk_4.7.0\project\mt7686_hdk\apps\audio_ref_design\src):static void test_sd_event_callback(mp3_codec_media_handle_t *hdl, mp3_codec_event_t event)
+Mp3_codec_demo.c (v:\mtk_sdk\sdk_4.7.0\project\mt7686_hdk\apps\audio_ref_design\src):    hdl = mp3_codec_open(test_sd_event_callback);
+Mp3_codec_demo.c (v:\mtk_sdk\sdk_4.7.0\project\mt7686_hdk\apps\audio_ref_design\src):    hdl = mp3_codec_open(test_sd_event_callback);
+Mp3_codec_sqc.c (v:\mtk_sdk\sdk_4.7.0\project\mt7686_hdk\apps\audio_ref_design\src):static void test_sd_event_callback(mp3_codec_media_handle_t *hdl, mp3_codec_event_t event)
+Mp3_codec_sqc.c (v:\mtk_sdk\sdk_4.7.0\project\mt7686_hdk\apps\audio_ref_design\src):    hdl = mp3_codec_open(test_sd_event_callback);
+mp3_codec_StereoMono_SR.c (v:\mtk_sdk\sdk_4.7.0\project\mt7686_hdk\apps\audio_ref_design\src):static void test_sd_event_callback(mp3_codec_media_handle_t *hdl, mp3_codec_event_t event)
+mp3_codec_StereoMono_SR.c (v:\mtk_sdk\sdk_4.7.0\project\mt7686_hdk\apps\audio_ref_design\src):    hdl = mp3_codec_open(test_sd_event_callback);

@@ -1,0 +1,4 @@
+../../../../../project/mt7686_hdk/apps/codoon_wifi_smart/src/mp3_codec_demo.c: In function 'mp3_codec_demo':
+../../../../../project/mt7686_hdk/apps/codoon_wifi_smart/src/mp3_codec_demo.c:321:5: warning: implicit declaration of function 'SynMp3files' [-Wimplicit-function-declaration]
+     res=SynMp3files ("SD:/temp",15);
+     ^
