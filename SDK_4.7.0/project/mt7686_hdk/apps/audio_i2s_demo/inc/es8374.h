@@ -14,7 +14,7 @@
 #ifndef _ES8374_H
 #define _ES8374_H
 
-#define ES8374_I2C_ADDR                               0x10
+#define ES8374_I2C_ADDR                               0x11
 
 
 /**  This enum define the HAL interface return value. */

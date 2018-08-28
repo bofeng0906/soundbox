@@ -576,6 +576,8 @@ AUCODEC_STATUS_e aucodec_init(void)
 
 	es8374_init = 1;
 	vol_reg = aucodec_volume_reg(volume_value);
+
+    printf("HAL_I2C_FREQUENCY_200K\n");
 	
 	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_200K); //init codec
 	

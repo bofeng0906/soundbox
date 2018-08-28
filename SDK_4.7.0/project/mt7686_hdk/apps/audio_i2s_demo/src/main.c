@@ -46,6 +46,9 @@
 #include "syslog.h"
 #include "oal_audio.h"
 #include "pcm44100.h"
+
+#include "hal_gpio.h"
+
 /****************************************************************************
  *
  * CLI Example Code
@@ -299,6 +302,16 @@ int main(void)
      * For more details, please refer to the log dev guide under /doc folder or projects
      * under project/mtxxxx_hdk/apps/.
      */
+
+    //hal_pinmux_set_function(HAL_GPIO_15, 5);
+    //hal_pinmux_set_function(HAL_GPIO_16, 5);
+
+    /*Step1: Initialize GPIO, set GPIO pinmux(if EPT tool is not used to configure the related pinmux) */    
+    hal_gpio_init(HAL_GPIO_15);    
+    hal_gpio_init(HAL_GPIO_16);    
+    /* Call hal_pinmux_set_function() to set GPIO pinmux.*/    
+    hal_pinmux_set_function(HAL_GPIO_15, HAL_GPIO_15_SCL1);    
+    hal_pinmux_set_function(HAL_GPIO_16, HAL_GPIO_16_SDA1);
 
     log_init(NULL, NULL, NULL);
 

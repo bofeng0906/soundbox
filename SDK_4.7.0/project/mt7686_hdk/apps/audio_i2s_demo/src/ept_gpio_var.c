@@ -22,7 +22,7 @@
 *============================================================================
 ****************************************************************************/
 
-const char HAL_I2C_MASTER_1_SCL_PIN = 0;
+const char HAL_I2C_MASTER_1_SCL_PIN = 15;
 const char HAL_I2C_MASTER_1_SCL_PIN_M_GPIO = 0;
 const char HAL_I2C_MASTER_1_SCL_PIN_M_EINT = 1;
 const char HAL_I2C_MASTER_1_SCL_PIN_M_WIFIRF_DBGOUT0 = 2;
@@ -155,7 +155,7 @@ const char HAL_I2S0_MCLK_PIN_M_WIFI_ANT_SEL3 = 8;
 const char HAL_I2S0_MCLK_PIN_M_BT_PRI1 = 9;
 
 
-const char HAL_I2C_MASTER_1_SDA_PIN = 18;
+const char HAL_I2C_MASTER_1_SDA_PIN = 16;
 const char HAL_I2C_MASTER_1_SDA_PIN_M_GPIO = 0;
 const char HAL_I2C_MASTER_1_SDA_PIN_M_PMU_GOTO_SLEEP = 1;
 const char HAL_I2C_MASTER_1_SDA_PIN_M_TDM_MCLK = 3;
