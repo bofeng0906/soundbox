@@ -313,6 +313,18 @@ int main(void)
     hal_pinmux_set_function(HAL_GPIO_15, HAL_GPIO_15_SCL1);    
     hal_pinmux_set_function(HAL_GPIO_16, HAL_GPIO_16_SDA1);
 
+    hal_gpio_init(HAL_GPIO_5); 
+    hal_gpio_init(HAL_GPIO_6);    
+    hal_gpio_init(HAL_GPIO_7);    
+    hal_gpio_init(HAL_GPIO_8);    
+    hal_gpio_init(HAL_GPIO_9);  
+
+    hal_pinmux_set_function(HAL_GPIO_5, HAL_GPIO_5_TDM_RX);    
+    hal_pinmux_set_function(HAL_GPIO_6, HAL_GPIO_6_TDM_TX);    
+    hal_pinmux_set_function(HAL_GPIO_7, HAL_GPIO_7_TDM_WS);
+    hal_pinmux_set_function(HAL_GPIO_8, HAL_GPIO_8_TDM_CK);    
+    hal_pinmux_set_function(HAL_GPIO_9, HAL_GPIO_9_TDM_MCLK);
+
     log_init(NULL, NULL, NULL);
 
 	OAL_InitAudio();
