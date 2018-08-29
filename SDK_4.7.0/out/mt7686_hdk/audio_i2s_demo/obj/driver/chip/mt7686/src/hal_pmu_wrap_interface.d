@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/chip/mt7686/src/hal_pmu_wrap_interface.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/chip/mt7686/src/hal_pmu_wrap_interface.d: \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/chip/mt7686/src/hal_pmu_wrap_interface.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/chip/mt7686/src/hal_pmu_wrap_interface.d: \
  ../../../../../driver/chip/mt7686/src/hal_pmu_wrap_interface.c \
  ../../../../../driver/chip/mt7686/inc/hal_pmu.h \
  ../../../../../driver/chip/mt7686/inc/hal_platform.h \

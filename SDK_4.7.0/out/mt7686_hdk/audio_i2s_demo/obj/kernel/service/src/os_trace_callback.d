@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/service/src/os_trace_callback.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/service/src/os_trace_callback.d: \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/service/src/os_trace_callback.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/service/src/os_trace_callback.d: \
  ../../../../../kernel/service/src/os_trace_callback.c \
  ../../../../../kernel/rtos/FreeRTOS/Source/include/FreeRTOS.h \
  ../inc/FreeRTOSConfig.h \

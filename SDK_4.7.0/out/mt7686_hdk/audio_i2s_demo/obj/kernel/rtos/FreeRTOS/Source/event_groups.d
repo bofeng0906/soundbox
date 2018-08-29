@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/rtos/FreeRTOS/Source/event_groups.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/rtos/FreeRTOS/Source/event_groups.d: ../../../../../kernel/rtos/FreeRTOS/Source/event_groups.c \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/rtos/FreeRTOS/Source/event_groups.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/rtos/FreeRTOS/Source/event_groups.d: ../../../../../kernel/rtos/FreeRTOS/Source/event_groups.c \
  ../../../../../kernel/rtos/FreeRTOS/Source/include/FreeRTOS.h \
  ../inc/FreeRTOSConfig.h \
  ../../../../../kernel/service/inc/os_port_callback.h \

@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/regions_init.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/regions_init.d: \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/regions_init.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/regions_init.d: \
  ../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/regions_init.c \
  ../../../../../kernel/service/inc/exception_handler.h \
  ../../../../../driver/CMSIS/Device/MTK/mt7686/Include/mt7686.h \

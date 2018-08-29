@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.d: \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.d: \
  ../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/mt768xaudio.c \
  ../../../../../driver/CMSIS/Device/MTK/mt7686/Include/memory_attribute.h \
  ../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/oal_audio.h \

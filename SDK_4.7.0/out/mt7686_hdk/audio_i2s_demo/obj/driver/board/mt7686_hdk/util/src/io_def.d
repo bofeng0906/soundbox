@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/util/src/io_def.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/util/src/io_def.d: ../../../../../driver/board/mt7686_hdk/util/src/io_def.c \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/util/src/io_def.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/util/src/io_def.d: ../../../../../driver/board/mt7686_hdk/util/src/io_def.c \
  ../inc/FreeRTOSConfig.h \
  ../../../../../kernel/service/inc/os_port_callback.h \
  ../../../../../kernel/service/inc/os_trace_callback.h \

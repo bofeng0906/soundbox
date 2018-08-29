@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/ept/src/bsp_gpio_ept_config.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/ept/src/bsp_gpio_ept_config.d: \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/ept/src/bsp_gpio_ept_config.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/ept/src/bsp_gpio_ept_config.d: \
  ../../../../../driver/board/mt7686_hdk/ept/src/bsp_gpio_ept_config.c \
  ../../../../../driver/board/mt7686_hdk/ept/inc/bsp_gpio_ept_config.h \
  ../../../../../driver/CMSIS/Device/MTK/mt7686/Include/mt7686.h \

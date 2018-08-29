@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/chip/mt7686/src/hal_sd.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/chip/mt7686/src/hal_sd.d: ../../../../../driver/chip/mt7686/src/hal_sd.c \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/chip/mt7686/src/hal_sd.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/chip/mt7686/src/hal_sd.d: ../../../../../driver/chip/mt7686/src/hal_sd.c \
  ../../../../../driver/chip/mt7686/inc/hal_msdc.h \
  ../../../../../driver/chip/mt7686/inc/hal_platform.h \
  ../../../../../driver/chip/inc/hal_define.h ../inc/hal_feature_config.h \

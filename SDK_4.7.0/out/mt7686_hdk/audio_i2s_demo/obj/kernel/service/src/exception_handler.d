@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/service/src/exception_handler.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/service/src/exception_handler.d: \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/service/src/exception_handler.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/service/src/exception_handler.d: \
  ../../../../../kernel/service/src/exception_handler.c \
  ../../../../../driver/CMSIS/Device/MTK/mt7686/Include/memory_attribute.h \
  ../../../../../kernel/service/inc/exception_handler.h \

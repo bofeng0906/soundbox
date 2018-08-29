@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/sys_init.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/sys_init.d: \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/sys_init.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/sys_init.d: \
  ../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/sys_init.c \
  ../../../../../kernel/rtos/FreeRTOS/Source/include/FreeRTOS.h \
  ../inc/FreeRTOSConfig.h \

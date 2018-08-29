@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/es8374.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/es8374.d: \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/es8374.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/es8374.d: \
  ../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/es8374.c \
  ../../../../../driver/chip/inc/hal_gpt.h \
  ../../../../../driver/chip/mt7686/inc/hal_platform.h \

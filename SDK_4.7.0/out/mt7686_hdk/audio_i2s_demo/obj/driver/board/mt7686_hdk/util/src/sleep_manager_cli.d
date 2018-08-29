@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/util/src/sleep_manager_cli.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/util/src/sleep_manager_cli.d: \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/util/src/sleep_manager_cli.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/util/src/sleep_manager_cli.d: \
  ../../../../../driver/board/mt7686_hdk/util/src/sleep_manager_cli.c \
  ../inc/FreeRTOSConfig.h \
  ../../../../../kernel/service/inc/os_port_callback.h \

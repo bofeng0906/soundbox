@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/rtos/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/rtos/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.d: \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/rtos/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/rtos/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.d: \
  ../../../../../kernel/rtos/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
  ../../../../../kernel/rtos/FreeRTOS/Source/include/FreeRTOS.h \
  ../inc/FreeRTOSConfig.h \

@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/main.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/main.d: ../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/main.c \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/main.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/project/mt7686_hdk/apps/audio_i2s_demo/src/main.d: ../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/main.c \
  ../../../../../kernel/rtos/FreeRTOS/Source/include/FreeRTOS.h \
  ../inc/FreeRTOSConfig.h \
  ../../../../../kernel/service/inc/os_port_callback.h \
@@ -24,6 +24,9 @@
  ../inc/sys_init.h ../inc/task_def.h ../inc/FreeRTOSConfig.h \
  ../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/oal_audio.h \
  ../../../../../project/mt7686_hdk/apps/audio_i2s_demo/src/pcm44100.h \
+ ../../../../../driver/chip/inc/hal_gpio.h \
+ ../../../../../driver/chip/mt7686/inc/hal_pinmux_define.h \
+ ../../../../../driver/chip/mt7686/inc/hal_platform.h \
  ../../../../../middleware/MTK/minicli/inc/cli.h \
  ../../../../../middleware/MTK/minicli/inc/putter.h \
  ../../../../../driver/board/mt7686_hdk/util/inc/io_def.h \

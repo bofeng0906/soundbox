@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/chip/mt7686/src/hal_flash_combo_nor.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/chip/mt7686/src/hal_flash_combo_nor.d: \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/chip/mt7686/src/hal_flash_combo_nor.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/chip/mt7686/src/hal_flash_combo_nor.d: \
  ../../../../../driver/chip/mt7686/src/hal_flash_combo_nor.c \
  ../../../../../driver/chip/inc/hal_flash.h \
  ../../../../../driver/chip/mt7686/inc/hal_platform.h \

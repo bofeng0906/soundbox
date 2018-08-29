@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/util/src/board_cli.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/util/src/board_cli.d: ../../../../../driver/board/mt7686_hdk/util/src/board_cli.c \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/util/src/board_cli.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/driver/board/mt7686_hdk/util/src/board_cli.d: ../../../../../driver/board/mt7686_hdk/util/src/board_cli.c \
  ../../../../../middleware/MTK/wifi_service/combo/inc/os.h \
  ../../../../../kernel/service/inc/toi.h \
  ../../../../../middleware/MTK/minicli/inc/cli.h \

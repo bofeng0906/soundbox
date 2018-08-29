@@ -1,4 +1,4 @@
-/home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/service/src/syslog_cli.o /home/bruce/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/service/src/syslog_cli.d: ../../../../../kernel/service/src/syslog_cli.c \
+/home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/service/src/syslog_cli.o /home/fu/git/machine2/soundbox/SDK_4.7.0/out/mt7686_hdk/audio_i2s_demo/obj/kernel/service/src/syslog_cli.d: ../../../../../kernel/service/src/syslog_cli.c \
  ../../../../../kernel/service/inc/syslog.h \
  ../../../../../driver/chip/inc/hal_uart.h \
  ../../../../../driver/chip/mt7686/inc/hal_platform.h \
