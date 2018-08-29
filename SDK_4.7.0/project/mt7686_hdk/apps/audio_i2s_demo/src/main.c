@@ -325,6 +325,11 @@ int main(void)
     hal_pinmux_set_function(HAL_GPIO_8, HAL_GPIO_8_TDM_CK);    
     hal_pinmux_set_function(HAL_GPIO_9, HAL_GPIO_9_TDM_MCLK);
 
+    hal_gpio_init(HAL_GPIO_17); 
+    hal_gpio_set_direction(HAL_GPIO_17, HAL_GPIO_DIRECTION_OUTPUT);
+    hal_gpio_set_output(HAL_GPIO_17, HAL_GPIO_DATA_HIGH);
+
+    
     log_init(NULL, NULL, NULL);
 
 	OAL_InitAudio();
