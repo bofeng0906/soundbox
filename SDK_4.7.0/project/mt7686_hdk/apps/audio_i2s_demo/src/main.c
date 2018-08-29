@@ -80,6 +80,8 @@ static char *s_history_ptrs[ HISTORY_LINES ];
 static char s_history_input[ HISTORY_LINE_MAX ];
 static char s_history_parse_token[ HISTORY_LINE_MAX ];
 
+static char test_recod_buf[494*2048];
+
 
 /* Example of user custom CLI command, note that the prototype matches cli_cmd_handler_t */
 static uint8_t _example_cli_command_hello(uint8_t argc, char *argv[])
@@ -134,12 +136,26 @@ void cmd_line_playsong(int argc, char *argv[])
     void *p = OAL_OpenAudio(&cfg);
 
     int max_step = sizeof(II_PCM)/2048;
+    printf("max_step is %d\r\n",max_step);
     for(int i=0; i< max_step; i ++)
     {
         OAL_OutputPCM(p, II_PCM +i*2048, 2048);
     }
     OAL_CloseAudio(p);
 }
+void cmd_line_play_recordtone(int argc, char *argv[])
+{
+    OAL_AUDIO_CFG cfg = {0,0, 2048, 44100,2,16};
+    void *p = OAL_OpenAudio(&cfg);
+
+    int max_step = sizeof(test_recod_buf)/2048;
+    for(int i=0; i< max_step; i ++)
+    {
+        OAL_OutputPCM(p, test_recod_buf +i*2048, 2048);
+    }
+    OAL_CloseAudio(p);
+}
+
 static record_buf[1024];
 static void _record_task(void *param)
 {
@@ -176,6 +192,43 @@ void cmd_line_recordtone(int argc, char *argv[])
                 APP_TASK_PRIO,
                 NULL);
 }
+
+static void _test_record_task(void *param)
+{
+	OAL_AUDIO_CFG cfg = {1, 0, 1024, 16000, 2, 16};
+
+	void *p = OAL_OpenAudio(&cfg);
+	
+	printf("i2s0 is opened for record.\r\n");
+
+#if 1
+	int i;
+	for(i =0; i < 494*2; i ++)
+	{
+		OAL_InputPCM(p, test_recod_buf+1024*i, 1024);
+		//vTaskDelay(100);
+		//printf(".");
+		//if(i % 100 == 0)
+			//printf("\r\n");
+	}
+	
+	OAL_CloseAudio(p);
+#else
+	while(1)
+		vTaskDelay(1000);
+#endif	
+	vTaskDelete(NULL);
+}
+void cmd_line_test_recordtone(int argc, char *argv[])
+{
+    xTaskCreate(_test_record_task,
+                "test_reco",
+                APP_TASK_STACKSIZE / sizeof(portSTACK_TYPE),
+                NULL,
+                APP_TASK_PRIO,
+                NULL);
+}
+
 static uint8_t _example_cli_command_int(uint8_t argc, char *argv[])
 {
     int         i;
@@ -224,6 +277,8 @@ static cmd_t  _cmds_normal[] = {
     { "play16000", "", cmd_line_playtone, NULL },
 	{ "play44100", "", cmd_line_playsong, NULL },
 	{ "record", "", cmd_line_recordtone, NULL },
+	{ "testrecord", "", cmd_line_test_recordtone, NULL },
+	{ "playrecord", "", cmd_line_play_recordtone, NULL },
     /*	Add your custom command here */
     { NULL, NULL, NULL, NULL }
 };
@@ -328,6 +383,9 @@ int main(void)
     hal_gpio_init(HAL_GPIO_17); 
     hal_gpio_set_direction(HAL_GPIO_17, HAL_GPIO_DIRECTION_OUTPUT);
     hal_gpio_set_output(HAL_GPIO_17, HAL_GPIO_DATA_HIGH);
+
+    int max_step = sizeof(II_PCM)/2048;
+    printf("max_step is %d\r\n",max_step);
 
     
     log_init(NULL, NULL, NULL);
