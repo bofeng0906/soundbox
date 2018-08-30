@@ -145,7 +145,7 @@ void cmd_line_playsong(int argc, char *argv[])
 }
 void cmd_line_play_recordtone(int argc, char *argv[])
 {
-    OAL_AUDIO_CFG cfg = {0,0, 2048, 44100,2,16};
+    OAL_AUDIO_CFG cfg = {0,0, 2048, 16000,2,16};
     void *p = OAL_OpenAudio(&cfg);
 
     int max_step = sizeof(test_recod_buf)/2048;
