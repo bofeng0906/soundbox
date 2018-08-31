@@ -448,7 +448,7 @@ AUCODEC_STATUS_e aucodec_set_dai_sysclk(
 
 void aucodec_set_sampling_rate(int bitrate)
 {
-	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_200K); //init codec
+	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_100K); //init codec
 
 	switch (bitrate) {
 		case 8000:
@@ -577,9 +577,9 @@ AUCODEC_STATUS_e aucodec_init(void)
 	es8374_init = 1;
 	vol_reg = aucodec_volume_reg(volume_value);
 
-    printf("HAL_I2C_FREQUENCY_200K\n");
+    printf("HAL_I2C_FREQUENCY_100K\n");
 	
-	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_200K); //init codec
+	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_100K); //init codec
 	
 	aucodec_i2c_write(0x00,0x3F); //IC Rst start
 	aucodec_i2c_write(0x00,0x03); //IC Rst stop
@@ -655,7 +655,7 @@ AUCODEC_STATUS_e aucodec_init(void)
 
 AUCODEC_STATUS_e aucodec_deinit(void)
 {
-	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_200K); //init codec
+	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_100K); //init codec
 
 	aucodec_i2c_write(0x38,0xC0);
 	aucodec_i2c_write(0x25,0xC0);
@@ -688,18 +688,29 @@ AUCODEC_STATUS_e aucodec_set_volume(uint8_t volume)
 
 	vol_reg = aucodec_volume_reg(volume);
 
-	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_200K); //init codec
+	//aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_100K); //init codec
 
 	printf("aucodec_set_volume vol_reg=%d,\n", vol_reg);
 	aucodec_i2c_write(0x38, vol_reg);
 
-	aucodec_i2c_deinit();
+	//aucodec_i2c_deinit();
 
 	return AUCODEC_STATUS_OK;
 }
 
+void aucodec_volume_val(uint8_t val)
+{
+    
+	if(val >= VOLUME_MAX)
+		return;
+
+	volume_value = val;
+    printf("volume_value %d\n", volume_value);
+	aucodec_set_volume(volume_value);
+}
 void aucodec_volume_up(void)
 {
+    printf("volume_value %d\n", volume_value);
 	if(volume_value >= VOLUME_MAX)
 		return;
 
@@ -709,6 +720,7 @@ void aucodec_volume_up(void)
 
 void aucodec_volume_down(void)
 {
+    printf("volume_value %d\n", volume_value);
 	if(volume_value <= 0)
 		return;
 
@@ -729,7 +741,7 @@ void aucodec_volume_save(void)
 void aucodec_i2c_debug(void)
 {
 	printf("\n\n");
-	for(uint8_t i=0; i<=32; i++){
+	for(uint8_t i=0; i<=0x38; i++){
 		printf("%d=0x%x,\n", i,aucodec_i2c_read(i));
 	}
 	printf("\n\n");

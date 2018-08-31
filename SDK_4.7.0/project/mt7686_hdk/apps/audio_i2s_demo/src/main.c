@@ -272,6 +272,53 @@ static uint8_t cmd_line_1929_test(uint8_t argc, char *argv[])
     printf("cmd_line_1929_test end\n");
     return 0;
 }
+static uint8_t cmd_line_vol_up(uint8_t argc, char *argv[])
+{
+    printf("cmd_line_vol_up\n");
+    aucodec_volume_up();
+    printf("cmd_line_vol_up end\n");
+    return 0;
+}
+
+static uint8_t cmd_line_vol_down(uint8_t argc, char *argv[])
+{
+    printf("cmd_line_vol_down\n");
+    aucodec_volume_down();
+    printf("cmd_line_vol_down end\n");
+    return 0;
+}
+static uint8_t cmd_line_read(uint8_t argc, char *argv[])
+{
+    printf("cmd_line_read\n");
+    aucodec_i2c_debug();
+    printf("cmd_line_read end\n");
+    return 0;
+}
+static uint8_t cmd_line_vol(uint8_t argc, char *argv[])
+{
+    uint8_t val;
+    uint8_t     type;
+    printf("cmd_line_vol\n");
+    if(argc<1)
+        return;
+    val = toi(argv[0], &type);
+    aucodec_volume_val(val);
+    printf("cmd_line_vol end\n");
+    return 0;
+}
+static uint8_t cmd_line_mute(uint8_t argc, char *argv[])
+{
+    uint8_t val;
+    uint8_t     type;
+    printf("cmd_line_mute\n");
+    if(argc<1)
+        return;
+    val = toi(argv[0], &type);
+    aucodec_set_mute(val);
+    printf("cmd_line_mute end\n");
+    return 0;
+}
+
 
 /* CLI Command list
    Format:
@@ -289,6 +336,11 @@ static cmd_t  _cmds_normal[] = {
 	{ "record", "", cmd_line_recordtone, NULL },
 	{ "testrecord", "", cmd_line_test_recordtone, NULL },
 	{ "playrecord", "", cmd_line_play_recordtone, NULL },
+	{ "volup", "", cmd_line_vol_up, NULL },
+	{ "voldown", "", cmd_line_vol_down, NULL },
+	{ "vol", "", cmd_line_vol, NULL },
+	{ "mute", "", cmd_line_mute, NULL },
+	{ "read", "", cmd_line_read, NULL },
 	{ "led1929", "", cmd_line_1929_test, NULL },
     /*	Add your custom command here */
     { NULL, NULL, NULL, NULL }
