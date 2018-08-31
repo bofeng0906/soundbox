@@ -49,6 +49,9 @@
 
 #include "hal_gpio.h"
 
+#include "tm1929.h"
+
+
 /****************************************************************************
  *
  * CLI Example Code
@@ -262,6 +265,13 @@ static uint8_t _example_cli_command_int(uint8_t argc, char *argv[])
     return 0;
 }
 
+static uint8_t cmd_line_1929_test(uint8_t argc, char *argv[])
+{
+    printf("cmd_line_1929_test\n");
+    test_led1929();
+    printf("cmd_line_1929_test end\n");
+    return 0;
+}
 
 /* CLI Command list
    Format:
@@ -279,6 +289,7 @@ static cmd_t  _cmds_normal[] = {
 	{ "record", "", cmd_line_recordtone, NULL },
 	{ "testrecord", "", cmd_line_test_recordtone, NULL },
 	{ "playrecord", "", cmd_line_play_recordtone, NULL },
+	{ "led1929", "", cmd_line_1929_test, NULL },
     /*	Add your custom command here */
     { NULL, NULL, NULL, NULL }
 };
@@ -391,6 +402,8 @@ int main(void)
     log_init(NULL, NULL, NULL);
 
 	OAL_InitAudio();
+
+    led1929_init();
 	
     LOG_I(minicli_proj, "start to create task");
 
