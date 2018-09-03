@@ -37,6 +37,14 @@
 
 #define PWM_LEN   255
 
+
+/**  This enum define the HAL interface return value. */
+typedef enum {
+    AUCODEC_STATUS_ERROR = -1,   /**<  An error occurred and the transaction failed. */
+    AUCODEC_STATUS_OK = 0        /**<  No error occurred during the function call. */
+} AUCODEC_STATUS_e;
+
+
 int8_t led1929_i2c_write(uint8_t u8Addr,uint8_t u8Data);
 uint8_t led1929_i2c_read(uint8_t u8Addr);
 void led1929_init(void);

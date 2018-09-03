@@ -48,6 +48,8 @@
 #include "pcm44100.h"
 
 #include "hal_gpio.h"
+#include "hal.h"
+
 
 #include "tm1929.h"
 
@@ -84,6 +86,9 @@ static char s_history_input[ HISTORY_LINE_MAX ];
 static char s_history_parse_token[ HISTORY_LINE_MAX ];
 
 static char test_recod_buf[494*2048];
+
+static hal_eint_number_t irq_num1;
+static hal_eint_number_t irq_num4;
 
 
 /* Example of user custom CLI command, note that the prototype matches cli_cmd_handler_t */
@@ -319,6 +324,31 @@ static uint8_t cmd_line_mute(uint8_t argc, char *argv[])
     return 0;
 }
 
+static uint8_t cmd_line_panel_test(uint8_t argc, char *argv[])
+{
+    uint8_t val;
+    uint8_t     type;
+    printf("cmd_line_panel_test\n");
+    if(argc<1)
+        return;
+    val = toi(argv[0], &type);
+    if(val == 1)
+    {
+        hal_gpio_init(HAL_GPIO_10); 
+        hal_gpio_set_direction(HAL_GPIO_10, HAL_GPIO_DIRECTION_OUTPUT);
+        hal_gpio_set_output(HAL_GPIO_10, HAL_GPIO_DATA_HIGH);
+    }
+    else
+    {
+        hal_gpio_init(HAL_GPIO_10); 
+        hal_gpio_set_direction(HAL_GPIO_10, HAL_GPIO_DIRECTION_OUTPUT);
+        hal_gpio_set_output(HAL_GPIO_10, HAL_GPIO_DATA_LOW);
+    }
+    printf("cmd_line_panel_test end\n");
+    return 0;
+}
+
+
 
 /* CLI Command list
    Format:
@@ -342,6 +372,7 @@ static cmd_t  _cmds_normal[] = {
 	{ "mute", "", cmd_line_mute, NULL },
 	{ "read", "", cmd_line_read, NULL },
 	{ "led1929", "", cmd_line_1929_test, NULL },
+	{ "panel", "", cmd_line_panel_test, NULL },
     /*	Add your custom command here */
     { NULL, NULL, NULL, NULL }
 };
@@ -404,6 +435,148 @@ static void _example_cli_task(void *param)
  */
 log_create_module(minicli_proj, PRINT_LEVEL_INFO);
 
+static void eint_irq_handler_vol_up(void *data)
+{
+/*This option is used to provide API to mask/unmask dedicated EINT source.*/
+#ifdef HAL_EINT_FEATURE_MASK
+    /* Mask EINT */
+    hal_eint_mask(irq_num4);
+#endif
+
+    /* Please add your own code at here! */
+
+    printf("\r\n Received eint: %d !\r\n", irq_num4);
+    aucodec_volume_up();
+
+
+/*This option is used to provide API to mask/unmask dedicated EINT source.*/
+#ifdef HAL_EINT_FEATURE_MASK
+    /* Please unmask the EINT if you want to recieve EINT interrupt  */
+    hal_eint_unmask(irq_num4);
+#endif
+}
+static void eint_irq_handler_vol_down(void *data)
+{
+/*This option is used to provide API to mask/unmask dedicated EINT source.*/
+#ifdef HAL_EINT_FEATURE_MASK
+    /* Mask EINT */
+    hal_eint_mask(irq_num1);
+#endif
+
+    /* Please add your own code at here! */
+
+    printf("\r\n Received eint: %d !\r\n", irq_num1);
+    aucodec_volume_down();
+
+
+/*This option is used to provide API to mask/unmask dedicated EINT source.*/
+#ifdef HAL_EINT_FEATURE_MASK
+    /* Please unmask the EINT if you want to recieve EINT interrupt  */
+    hal_eint_unmask(irq_num1);
+#endif
+}
+
+
+static void eint_vol_up(void)
+{
+    hal_eint_config_t eint_config;
+    /* Test HAL_EINT_NUMBER_0 */
+    irq_num4 = HAL_EINT_NUMBER_4;
+
+    printf("\r\n ---eint_example begin---\r\n");
+
+    hal_gpio_init(HAL_GPIO_4);
+
+    /* Call hal_pinmux_set_function() to set GPIO pinmux, if EPT tool was not used to configure the related pinmux */
+    hal_pinmux_set_function(HAL_GPIO_4, HAL_GPIO_4_EINT4);
+
+    /* Set direction as input and disable pull of corresponding GPIO */
+    hal_gpio_set_direction(HAL_GPIO_4, HAL_GPIO_DIRECTION_INPUT);
+    hal_gpio_disable_pull(HAL_GPIO_4);
+
+    /* Define the EINT trigger mode by the signal characteristic.
+       It supports the following five types.
+         a) level and high    // A high-level triggered interrupt, which is triggered when the input signal is at high and is continuously triggered as long 					as the input signal is at high.
+         b) level and low     // A low-level triggered interrupt, which is triggered when the input signal is at low and is continuously triggered as long as 					the input signal is at low.
+         c) edge and rising   // A rising-edge triggered interrupt, which is triggered when the input signal transitions from low to high.
+         d) edge and falling  // A falling-edge triggered interrupt, which is triggered when the input signal transitions from hig to low.
+         e) dual edge         // A dual edge triggered interrupt, which is triggered when the input signal transitions from low to high or from high to low.
+    */
+
+    eint_config.trigger_mode = HAL_EINT_EDGE_RISING;
+
+    /* The input signal will be ignored if the signal cannot remain stable beyond the de-bounce times setting. The unit of de-bounce time is millisecond. The de-bounce is disabled when the de-bounce time is set to 0. */
+    eint_config.debounce_time = 5;
+
+/*This option is used to provide API to mask/unmask dedicated EINT source.*/
+#ifdef HAL_EINT_FEATURE_MASK
+    /* Mask EINT first to prevent the interrupt misfiring */
+    hal_eint_mask(irq_num4);
+#endif
+
+    hal_eint_init(irq_num4, &eint_config);
+    hal_eint_register_callback(irq_num4, eint_irq_handler_vol_up, NULL);
+
+/*This option is used to provide API to mask/unmask dedicated EINT source.*/
+#ifdef HAL_EINT_FEATURE_MASK
+    /* Unmask EINT  */
+    hal_eint_unmask(irq_num4);
+#endif
+
+    printf("\r\n ---eint_example finished!!!---\r\n");
+}
+
+static void eint_vol_down(void)
+{
+    hal_eint_config_t eint_config;
+    /* Test HAL_EINT_NUMBER_0 */
+    irq_num1 = HAL_EINT_NUMBER_1;
+
+    printf("\r\n ---eint_example begin---\r\n");
+
+    hal_gpio_init(HAL_GPIO_1);
+
+    /* Call hal_pinmux_set_function() to set GPIO pinmux, if EPT tool was not used to configure the related pinmux */
+    hal_pinmux_set_function(HAL_GPIO_1, HAL_GPIO_1_EINT1);
+
+    /* Set direction as input and disable pull of corresponding GPIO */
+    hal_gpio_set_direction(HAL_GPIO_1, HAL_GPIO_DIRECTION_INPUT);
+    hal_gpio_disable_pull(HAL_GPIO_1);
+
+    /* Define the EINT trigger mode by the signal characteristic.
+       It supports the following five types.
+         a) level and high    // A high-level triggered interrupt, which is triggered when the input signal is at high and is continuously triggered as long 					as the input signal is at high.
+         b) level and low     // A low-level triggered interrupt, which is triggered when the input signal is at low and is continuously triggered as long as 					the input signal is at low.
+         c) edge and rising   // A rising-edge triggered interrupt, which is triggered when the input signal transitions from low to high.
+         d) edge and falling  // A falling-edge triggered interrupt, which is triggered when the input signal transitions from hig to low.
+         e) dual edge         // A dual edge triggered interrupt, which is triggered when the input signal transitions from low to high or from high to low.
+    */
+
+    eint_config.trigger_mode = HAL_EINT_EDGE_RISING;
+
+    /* The input signal will be ignored if the signal cannot remain stable beyond the de-bounce times setting. The unit of de-bounce time is millisecond. The de-bounce is disabled when the de-bounce time is set to 0. */
+    eint_config.debounce_time = 5;
+
+/*This option is used to provide API to mask/unmask dedicated EINT source.*/
+#ifdef HAL_EINT_FEATURE_MASK
+    /* Mask EINT first to prevent the interrupt misfiring */
+    hal_eint_mask(irq_num1);
+#endif
+
+    hal_eint_init(irq_num1, &eint_config);
+    hal_eint_register_callback(irq_num1, eint_irq_handler_vol_down, NULL);
+
+/*This option is used to provide API to mask/unmask dedicated EINT source.*/
+#ifdef HAL_EINT_FEATURE_MASK
+    /* Unmask EINT  */
+    hal_eint_unmask(irq_num1);
+#endif
+
+    printf("\r\n ---eint_example finished!!!---\r\n");
+}
+
+
+
 
 int main(void)
 {
@@ -447,6 +620,10 @@ int main(void)
     hal_gpio_set_direction(HAL_GPIO_17, HAL_GPIO_DIRECTION_OUTPUT);
     hal_gpio_set_output(HAL_GPIO_17, HAL_GPIO_DATA_HIGH);
 
+    hal_gpio_init(HAL_GPIO_10); 
+    hal_gpio_set_direction(HAL_GPIO_10, HAL_GPIO_DIRECTION_OUTPUT);
+    hal_gpio_set_output(HAL_GPIO_10, HAL_GPIO_DATA_HIGH);
+
     int max_step = sizeof(II_PCM)/2048;
     printf("max_step is %d\r\n",max_step);
 
@@ -456,6 +633,9 @@ int main(void)
 	OAL_InitAudio();
 
     led1929_init();
+
+    eint_vol_up();
+    eint_vol_down();
 	
     LOG_I(minicli_proj, "start to create task");
 

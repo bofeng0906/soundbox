@@ -71,6 +71,28 @@ uint8_t led1929_i2c_read(uint8_t u8Addr)
     return u8TxDataBuf;
 }
 
+static AUCODEC_STATUS_e aucodec_i2c_master_init(hal_i2c_port_t i2c_port, hal_i2c_frequency_t frequency)
+{
+    /*I2C*/
+    hal_i2c_config_t i2c_config;
+    hal_i2c_status_t i2c_status;
+
+    //xSemaphoreTake(semaphore_i2c_port, portMAX_DELAY);
+
+    i2c_status = HAL_I2C_STATUS_OK;
+    i2c_config.frequency = (hal_i2c_frequency_t)frequency;
+
+    i2c_status = hal_i2c_master_init(i2c_port, &i2c_config);
+    if (i2c_status == HAL_I2C_STATUS_OK) {
+        log_hal_info("[led1929]i2c init ok\n");
+    } else {
+        log_hal_error("[led1929]i2c init error\n");
+        return AUCODEC_STATUS_ERROR;
+    }
+
+    return AUCODEC_STATUS_OK;
+}
+
 void led1929_init(void)
 {
 	
@@ -82,7 +104,7 @@ void led1929_init(void)
 
     printf("led1929_init\n");
 	
-	///aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_200K); //init codec
+	//aucodec_i2c_master_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_200K); //init codec
 	
 	led1929_i2c_write(0x00,0x00);
 	led1929_i2c_write(0x01,0x3F); //œÚµÿ÷∑01–¥»Î0x3f

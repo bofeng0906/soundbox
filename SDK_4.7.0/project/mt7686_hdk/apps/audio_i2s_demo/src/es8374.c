@@ -627,6 +627,7 @@ AUCODEC_STATUS_e aucodec_init(void)
 	aucodec_i2c_write(0x14,0x8A); // IC START
 	aucodec_i2c_write(0x15,0x40); // IC START
 	aucodec_i2c_write(0x1A,0xA0); // monoout set
+	//aucodec_i2c_write(0x1A,0x90); // monoout set
 	aucodec_i2c_write(0x1B,0x19); // monoout set
 	aucodec_i2c_write(0x1C,0x90); // spk set
 	aucodec_i2c_write(0x1D,0x2b); // spk set
@@ -754,7 +755,7 @@ int mt768x_audio_i2c_set_parameters(unsigned char isinput, unsigned short sample
 
 void mt768x_audio_i2c_set_output(MT768X_AUDIO_OUTPUT_MODE mode)
 {
-
+    
 }
 
 int mt768x_audio_i2c_init(void)
