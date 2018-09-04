@@ -348,6 +348,22 @@ static uint8_t cmd_line_panel_test(uint8_t argc, char *argv[])
     return 0;
 }
 
+static uint8_t cmd_line_out_test(uint8_t argc, char *argv[])
+{
+    uint8_t val;
+    uint8_t     type;
+    printf("cmd_line_out_test\n");
+    if(argc<1)
+        return;
+    val = toi(argv[0], &type);
+
+    aucodec_set_output(val);
+
+    printf("cmd_line_out_test end\n");
+    return 0;
+}
+
+
 
 
 /* CLI Command list
@@ -373,6 +389,7 @@ static cmd_t  _cmds_normal[] = {
 	{ "read", "", cmd_line_read, NULL },
 	{ "led1929", "", cmd_line_1929_test, NULL },
 	{ "panel", "", cmd_line_panel_test, NULL },
+	{ "out", "", cmd_line_out_test, NULL },
     /*	Add your custom command here */
     { NULL, NULL, NULL, NULL }
 };

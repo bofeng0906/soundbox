@@ -261,11 +261,17 @@ AUCODEC_STATUS_e aucodec_set_output(
     int8_t ret = 0;
     uint16_t u16Data;
 
-    if ((eOutputMode == eLineOut) || (eOutputMode == eSpkOut)) {
+    printf("eOutputMode %d\n",eOutputMode);
 
-
-    } else {
-
+    if (eOutputMode == eSpkOut) 
+    {
+        aucodec_i2c_write(0x1A,0xA0); // monoout set
+    	aucodec_i2c_write(0x1B,0x19); // monoout set        
+    } 
+    else 
+    {
+        aucodec_i2c_write(0x1A,0x90); // monoout set
+    	aucodec_i2c_write(0x1B,0x19); // monoout set        
     }
 
     return AUCODEC_STATUS_OK;
@@ -448,7 +454,7 @@ AUCODEC_STATUS_e aucodec_set_dai_sysclk(
 
 void aucodec_set_sampling_rate(int bitrate)
 {
-	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_100K); //init codec
+	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_200K); //init codec
 
 	switch (bitrate) {
 		case 8000:
@@ -577,9 +583,9 @@ AUCODEC_STATUS_e aucodec_init(void)
 	es8374_init = 1;
 	vol_reg = aucodec_volume_reg(volume_value);
 
-    printf("HAL_I2C_FREQUENCY_100K\n");
+    printf("HAL_I2C_FREQUENCY_200K\n");
 	
-	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_100K); //init codec
+	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_200K); //init codec
 	
 	aucodec_i2c_write(0x00,0x3F); //IC Rst start
 	aucodec_i2c_write(0x00,0x03); //IC Rst stop
@@ -656,7 +662,7 @@ AUCODEC_STATUS_e aucodec_init(void)
 
 AUCODEC_STATUS_e aucodec_deinit(void)
 {
-	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_100K); //init codec
+	aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_200K); //init codec
 
 	aucodec_i2c_write(0x38,0xC0);
 	aucodec_i2c_write(0x25,0xC0);
@@ -689,7 +695,7 @@ AUCODEC_STATUS_e aucodec_set_volume(uint8_t volume)
 
 	vol_reg = aucodec_volume_reg(volume);
 
-	//aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_100K); //init codec
+	//aucodec_i2c_init(HAL_I2C_MASTER_1, HAL_I2C_FREQUENCY_200K); //init codec
 
 	printf("aucodec_set_volume vol_reg=%d,\n", vol_reg);
 	aucodec_i2c_write(0x38, vol_reg);
