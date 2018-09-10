@@ -156,7 +156,8 @@ void cmd_line_play_recordtone(int argc, char *argv[])
     OAL_AUDIO_CFG cfg = {0,0, 2048, 16000,2,16};
     void *p = OAL_OpenAudio(&cfg);
 
-    int max_step = sizeof(test_recod_buf)/2048;
+    //int max_step = sizeof(test_recod_buf)/2048;
+    int max_step = 300;
     for(int i=0; i< max_step; i ++)
     {
         OAL_OutputPCM(p, test_recod_buf +i*2048, 2048);
@@ -211,7 +212,7 @@ static void _test_record_task(void *param)
 
 #if 1
 	int i;
-	for(i =0; i < 494*2; i ++)
+	for(i =0; i < 600; i ++)
 	{
 		OAL_InputPCM(p, test_recod_buf+1024*i, 1024);
 		//vTaskDelay(100);

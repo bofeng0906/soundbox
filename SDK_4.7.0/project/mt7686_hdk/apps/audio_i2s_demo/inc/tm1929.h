@@ -33,7 +33,7 @@
 #define	FIXBRIT_LED16 	 0x12		   // 器件地址
 #define	FIXBRIT_LED17 	 0x13		   // 器件地址
 
-#define LED1929_I2C_ADDR                               0x46
+#define LED1929_I2C_ADDR                               0x23
 
 #define PWM_LEN   255
 
